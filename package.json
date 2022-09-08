@@ -1,0 +1,20 @@
+{
+  "name": "be-vhiobot",
+  "version": "1.0.0",
+  "description": "vhiobot back-end",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "firebase-admin": "^11.0.1",
+    "socket.io": "^4.5.2"
+  }
+}
