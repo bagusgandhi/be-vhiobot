@@ -24,6 +24,7 @@ class ValidateJwt {
         const token = socket.handshake.auth.token;
         if(this.isValid(token)){
             socket.name = this.name;
+            socket.uuid = this.uuid;
             return next();
         } else {
             return next(new Error('authentication error'));
