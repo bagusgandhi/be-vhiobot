@@ -5,6 +5,7 @@ const bodyParser = require("body-parser");
 const cors = require('cors');
 const router = require('./router');
 const ValidateJwt = require('./utils/ValidateJwt');
+const queryText = require('./utils/DialogFlow');
 
 const app = express();
 const server = http.createServer(app);
@@ -25,9 +26,9 @@ io.use((socket, next) => {
 })
 
 io.on('connection', (socket) => {
-    console.log(`We have a new connection!!! ${socket.name}`);
+    console.log(`We have a new connection!!! ${socket.name} ${socket.uuid}`);
 
-    socket.on('join', () => {
+    socket.on('join', async () => {
         socket.join(socket.uuid);
         socket.emit('message', {
             name: 'vhiobot',
@@ -40,14 +41,14 @@ io.on('connection', (socket) => {
             name: socket.name,
             text: message,
         });
-        console.log(message);
     });
 
 
-    socket.on('askBot', async () => {
+    socket.on('askBot', async (message) => {
+        const response = await queryText(message);
         io.to(socket.uuid).emit('message', { 
             name: 'vhiobot',
-            text: 'testing!',
+            text: response,
         });
     });
 
@@ -56,5 +57,6 @@ io.on('connection', (socket) => {
     });
 
 });
+
 
 server.listen(port, () => console.log('runnin..'));
