@@ -1,7 +1,7 @@
 
 # be-vhiobot
 This is the backend service *chatbot* web application. You can see the setup and installation bellow.
-For the UI chatbot web application, you can see on this repo: ...
+For the UI chatbot web application, you can see on this [link](#)
 
 ## Setup & Installation
 
@@ -37,27 +37,27 @@ For connecting this backend to the Dialogflow service, you should have an agent.
 
 After your dialogflow agent ready, open [Google cloud console](https://cloud.google.com/), select the project as same as you create an agent before.
 
-![firebase service account](https://drive.google.com/uc?export=view&id=1EDgyA91_5jT_AMSDSuay6moiWCYOt7_y)
+![select google cloud project](https://drive.google.com/uc?export=view&id=1EDgyA91_5jT_AMSDSuay6moiWCYOt7_y)
 
 On Navigation Menu Go to the **Api & Services** , click **Credentials**.
 
-![firebase service account](https://drive.google.com/uc?export=view&id=14ufbObyMt20oeCCT81Cu4rCyUVYkhh12)
+![api & services credentials](https://drive.google.com/uc?export=view&id=14ufbObyMt20oeCCT81Cu4rCyUVYkhh12)
 
 Click **Create Credentials**, then **select Service Account**.
 
-![firebase service account](https://drive.google.com/uc?export=view&id=1Cpa4t8AFvRvEHXypMfe3sk84lf75COR0)
+![create service account](https://drive.google.com/uc?export=view&id=1Cpa4t8AFvRvEHXypMfe3sk84lf75COR0)
 
 Enter a **service account name**, **ID** and **description (optional)**.
 
-![firebase service account](https://drive.google.com/uc?export=view&id=1vNNEkeQczxdiHzQqGPrAP1o5shGp64Gv)
+![service account details](https://drive.google.com/uc?export=view&id=1vNNEkeQczxdiHzQqGPrAP1o5shGp64Gv)
 
 On the **select role** fields, type **Dialogflow API Admin**, then click **continue**.
 
-![firebase service account](https://drive.google.com/uc?export=view&id=1D_nrVVaDyDYBxo93VvlbSbY9OLZe5tRo)
+![service account role](https://drive.google.com/uc?export=view&id=1D_nrVVaDyDYBxo93VvlbSbY9OLZe5tRo)
 
 click your service account and create keys, then it will automatically download the keys.
 
-![firebase service account](https://drive.google.com/uc?export=view&id=16K6eubpyBq1i2DKI3pIqB4_26lCe-7KL)
+![service account key](https://drive.google.com/uc?export=view&id=16K6eubpyBq1i2DKI3pIqB4_26lCe-7KL)
 
 Move that file onto `./config` and rename it to **serviceAccountDialogflow.js**.
 
