@@ -1,6 +1,6 @@
 # be-vhiobot
 
-This is a backend service *chatbot* with Dialogflow service. For the frontend repository you can see on this link: ... 
+This is the backend service *chatbot* with Dialogflow service. For the frontend repository you can see on this link: ... 
 
 ## Installation & Setup
 
