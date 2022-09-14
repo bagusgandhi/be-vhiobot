@@ -28,7 +28,7 @@ yarn add
 ### Setup Firebase Admin Service Account
 First, you need to setup firebase credential. You can create project if you don't have one, or you can use your existing project. Click ***gear icon*** on the ***Project Overview*** then select ***Project Settings***. 
 
-![](https://drive.google.com/file/d/1HSxRFNwkO0PJUWXnoYGD6CUy3c2r-ZRw/edit)
+![firebase proect settings](https://drive.google.com/uc?export=view&id=1HSxRFNwkO0PJUWXnoYGD6CUy3c2r-ZRw)
 
 After that choose ***Service Accounts*** tab and click ***Generate new private key***.  After you click the generate button then automatically download your service account with JSON format. You can located this file inside `./config` directory and rename that file into **serviceAccount.json**
 
