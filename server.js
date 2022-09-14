@@ -6,6 +6,7 @@ const cors = require('cors');
 const router = require('./router');
 const ValidateJwt = require('./utils/ValidateJwt');
 const queryText = require('./utils/DialogFlow');
+const { getId, getName } = require('./utils/getUser');
 
 const app = express();
 const server = http.createServer(app);
@@ -25,35 +26,35 @@ io.use((socket, next) => {
     ValidateJwt.socketAuth(socket, next);  
 })
 
-io.on('connection', (socket) => {
-    console.log(`We have a new connection!!! ${socket.name} ${socket.uuid}`);
+io.on('connection', async (socket) => {
+    const token = socket.handshake.auth.token;
+    socket.uid = await getId(token);
+    socket.name = await getName(token);
 
-    socket.on('join', async () => {
-        socket.join(socket.uuid);
-        socket.emit('message', {
+    await socket.on('join', async () => {
+        await socket.join(socket.uid);
+        await socket.emit('message', {
             name: 'vhiobot',
             text: `Hai ${socket.name}, Ada yang bisa vhiobot bantu?`
         });
     });
 
-    socket.on('sendMessage', async (message) => {
-        io.to(socket.uuid).emit('message', { 
+    await socket.on('sendMessage', async (message, callback) => {
+        io.to(socket.uid).emit('message', { 
             name: socket.name,
             text: message,
         });
+        callback();
     });
 
 
-    socket.on('askBot', async (message) => {
+    await socket.on('askBot', async (message, callback) => {
         const response = await queryText(message);
-        io.to(socket.uuid).emit('message', { 
+        io.to(socket.uid).emit('message', { 
             name: 'vhiobot',
             text: response,
         });
-    });
-
-    socket.on('disconnect', () => {
-         
+        callback();
     });
 
 });
