@@ -9,8 +9,6 @@ class ValidateJwt {
         try{
             const decodeValue = await admin.auth().verifyIdToken(token);
             if (decodeValue) {
-                this.name = decodeValue.name;
-                this.uuid = decodeValue.user_id;
                 return true;
             } else {
                 return false;
@@ -23,8 +21,6 @@ class ValidateJwt {
     socketAuth(socket, next){
         const token = socket.handshake.auth.token;
         if(this.isValid(token)){
-            socket.name = this.name;
-            socket.uuid = this.uuid;
             return next();
         } else {
             return next(new Error('authentication error'));
