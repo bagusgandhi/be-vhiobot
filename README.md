@@ -30,12 +30,11 @@ After that choose the **Service Accounts** tabs and click **Generate new private
 
 ![firebase service account](https://drive.google.com/uc?export=view&id=17nmwxAdcqRNC0UCb2Ar_mDvlKIwXmuD3)
 
-You can located that file inside `./config` directory and rename that file into **serviceAccount.json**.
 
 ### Setup Dialogflow Service Account
-For connecting this backend to the Dialogflow service, you should have an agent. If you don't have any agent, create on this [link](https://dialogflow.cloud.google.com/) or you can see the [documentation](https://cloud.google.com/dialogflow/es/docs/quick/build-agent).
+For connecting this backend to the Dialogflow service, you should have an service account. You can create in on Google cloud platform. Make sure your Dialogflow is ready in use, if not ready yet you can see the [documentation](https://cloud.google.com/dialogflow/es/docs/quick/build-agent) for create an agent. 
 
-After your dialogflow agent ready, open [Google cloud console](https://cloud.google.com/), select the project as same as you create an agent before.
+Open [Google cloud console](https://cloud.google.com/), select the project name as same as you create an agent in Dialogflow before.
 
 ![select google cloud project](https://drive.google.com/uc?export=view&id=1EDgyA91_5jT_AMSDSuay6moiWCYOt7_y)
 
