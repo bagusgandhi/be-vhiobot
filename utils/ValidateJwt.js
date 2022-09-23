@@ -1,9 +1,6 @@
 const admin = require('../config/firebase-config');
 
 class ValidateJwt {
-    
-    name;
-    uuid;
 
     async isValid(token){
         try{
