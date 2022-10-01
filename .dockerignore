@@ -1,0 +1,12 @@
+node_modules
+.gitignore
+.env
+.env.example
+config/serviceAccount.js
+config/serviceAccountDialogflow.example.js
+config/serviceAccountDialogflowjs
+README.md
+jest.config.js
+test
+docker.sh
+docker-compose.yaml

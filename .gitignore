@@ -1,5 +1,9 @@
 node_modules
 /config/serviceAccount.json
 /config/serviceAccountDialogflow.js
+/config/serviceAccountDialogflow.example.js
 /test
 jest.config.js
+.env
+docker.sh
+docker-compose.yaml
