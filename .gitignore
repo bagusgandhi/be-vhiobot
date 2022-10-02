@@ -8,3 +8,5 @@ jest.config.js
 docker.sh
 docker-compose.yaml
 cloudbuild.test.yaml
+undangaja-c13fd-firebase-adminsdk-8oew1-0084fa8670.json
+.gitignore

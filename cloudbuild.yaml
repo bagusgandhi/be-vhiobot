@@ -26,4 +26,5 @@ steps:
   '--region', 
   'asia-southeast1',
   '--platform', 
-  'managed']
+  'managed',
+  '--allow-unauthenticated']
