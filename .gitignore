@@ -7,3 +7,5 @@ jest.config.js
 .env
 docker.sh
 docker-compose.yaml
+cloudbuild.test.yaml
+cloudbuild.yaml
