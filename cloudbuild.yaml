@@ -1,0 +1,30 @@
+steps:
+# proses CI: Build image & push image ke container registry
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/$PROJECT_ID/vhiobot-server', '.']
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/$PROJECT_ID/vhiobot-server']
+# proses CD: Deploy image ke layanan cloud run
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  entrypoint: 'gcloud'
+  args: ['run', 
+  'deploy', 
+  'vhiobot-server', 
+  '--image', 
+  'gcr.io/$PROJECT_ID/vhiobot-server', 
+  '--set-env-vars', 
+  'project_id=${_PROJECT_ID}', 
+  '--set-env-vars', 
+  'private_key=${_PRIVATE_KEY}', 
+  '--set-env-vars', 
+  'client_email=${_CLIENT_EMAIL}', 
+  '--set-env-vars', 
+  'project_id_df=${_PROJECT_ID_DF}', 
+  '--set-env-vars', 
+  'private_key_df=${_PRIVATE_KEY_DF}', 
+  '--set-env-vars', 
+  'client_email_df=${_CLIENT_EMAIL_DF}', 
+  '--region', 
+  'asia-southeast1',
+  '--platform', 
+  'managed']

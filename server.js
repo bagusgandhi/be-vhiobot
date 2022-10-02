@@ -15,7 +15,7 @@ const io = socketio(server, {
         origin: "*",
     }
 });
-const port = process.env.PORT;
+const port = process.env.PORT || 8080;
 
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
