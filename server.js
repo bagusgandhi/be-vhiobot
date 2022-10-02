@@ -15,7 +15,7 @@ const io = socketio(server, {
         origin: "*",
     }
 });
-const port = process.env.PORT || 8080;
+// const port = process.env.PORT || 8080;
 
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -60,4 +60,4 @@ io.on('connection', async (socket) => {
 });
 
 
-server.listen(port, () => console.log('runnin..'));
+server.listen(process.env.PORT, () => console.log('runnin..'));
