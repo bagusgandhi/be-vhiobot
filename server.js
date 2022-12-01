@@ -28,8 +28,10 @@ io.use((socket, next) => {
 
 io.on('connection', async (socket) => {
     const token = socket.handshake.auth.token;
+    socket.name = socket.handshake.auth.name;
     socket.uid = await getId(token);
-    socket.name = await getName(token);
+
+    console.log(socket.name)
 
     await socket.on('join', async () => {
         await socket.join(socket.uid);

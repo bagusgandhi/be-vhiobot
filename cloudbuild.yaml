@@ -11,7 +11,7 @@ steps:
   'vhiobot-server', 
   '--image', 
   'gcr.io/$PROJECT_ID/vhiobot-server', 
-  '--update-secrets=FIREBASE_SERVICE_ACCOUNT=FIREBASE_SERVICE_ACCOUNT:latest,DIALOGFLOW_SERVICE_ACCOUNT=DIALOGFLOW_SERVICE_ACCOUNT:latest', 
+  '--update-secrets=FIREBASE_SERVICE_ACCOUNT=FIREBASE_SERVICE_ACCOUNT:latest','--update-secrets=DIALOGFLOW_SERVICE_ACCOUNT=DIALOGFLOW_SERVICE_ACCOUNT:latest', 
   '--region', 
   'asia-southeast1',
   '--platform', 
